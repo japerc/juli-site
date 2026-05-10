@@ -10,7 +10,7 @@
   {{ with .Params.hero }}
   <section class="project-hero-image">
     <div class="container">
-      <img src="{{ .src | relURL }}" alt="{{ .alt }}" class="project-hero">
+      <img src="{{ .src | relURL }}" alt="{{ .alt }}" class="project-hero" loading="lazy" decoding="async">
       {{ with .credit_html }}<p class="hero-credit">{{ . | safeHTML }}</p>{{ end }}
     </div>
   </section>
@@ -19,7 +19,9 @@
   <section>
     <div class="container">
       <h2 class="section-heading">About the Project</h2>
-      {{ .Content }}
+      <div class="project-body">
+        {{ .Content }}
+      </div>
       {{ with .Params.details }}
       <div class="detail-cards">
         {{ range . }}
@@ -50,6 +52,9 @@
       {{ end }}
     {{ end }}
   {{ end }}
+  {{/* Sort by year, newest first. Hugo's sort is stable, so entries within
+       the same year keep their YAML-authored order. */}}
+  {{ $related = sort $related "year" "desc" }}
 
   {{ if $related }}
   <section>

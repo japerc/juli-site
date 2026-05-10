@@ -3,10 +3,13 @@
   in data/publications.yaml — see that file's header comment for the schema.
 */}}
 <div class="pub-entry">
-  <p class="authors">{{ .authors | safeHTML }}</p>
-  <p class="pub-title"{{ with .lang }} lang="{{ . }}"{{ end }}>{{ .title | safeHTML }}</p>
-  <p class="pub-venue"{{ with .lang }} lang="{{ . }}"{{ end }}>{{ .venue | safeHTML }}</p>
-  {{ with .link }}
-  <p class="pub-doi"><a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a></p>
-  {{ end }}
+  <div class="pub-year">{{ .year }}</div>
+  <div class="pub-meta">
+    <p class="authors">{{ .authors | safeHTML }}</p>
+    <p class="pub-title"{{ with .lang }} lang="{{ . }}"{{ end }}>{{ .title | safeHTML }}</p>
+    <p class="pub-venue"{{ with .lang }} lang="{{ . }}"{{ end }}>{{ .venue | safeHTML }}</p>
+    {{ with .link }}
+    <p class="pub-doi"><a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a></p>
+    {{ end }}
+  </div>
 </div>

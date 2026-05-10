@@ -1,10 +1,12 @@
 {{ define "main" }}
 
   <section class="hero">
-    <div class="container">
-      <img src="{{ "/images/profile.JPG" | relURL }}" alt="Julia Perczel" class="profile-image">
-      <h1>{{ .Title }}</h1>
-      {{ .Content }}
+    <div class="container hero-grid">
+      <img src="{{ "/images/profile.JPG" | relURL }}" alt="Julia Perczel" class="profile-image" loading="lazy" decoding="async">
+      <div class="hero-text">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+      </div>
     </div>
   </section>
 
@@ -16,6 +18,28 @@
         <li>Social mobility and the waste trade</li>
         <li>The social effects and portrayals of working with toxic substances</li>
       </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-heading">Selected Projects</h2>
+      <div class="project-cards">
+        {{ range slice "/e-waste" "/himalayan-waste" }}
+          {{ with site.GetPage . }}
+          <a href="{{ .RelPermalink }}" class="project-card">
+            {{ with .Params.hero }}
+            <img src="{{ .src | relURL }}" alt="" loading="lazy" decoding="async">
+            {{ end }}
+            <div class="project-card-body">
+              <h3>{{ .Title }}</h3>
+              {{ with .Params.subtitle }}<p>{{ . }}</p>{{ end }}
+              <span class="project-card-more">Read more →</span>
+            </div>
+          </a>
+          {{ end }}
+        {{ end }}
+      </div>
     </div>
   </section>
 
