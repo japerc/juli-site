@@ -12,7 +12,6 @@ details:
     value: Leverhulme Trust
   - label: Duration
     value: 2025–2028
-related_publications: true
 ---
 <p>By tracing waste’s accumulation across landscapes and its interactions with other wastes, weather, geology,
   plant and animal life, gods and spirits, as well as economic and social processes, Julia Perczel’s research
