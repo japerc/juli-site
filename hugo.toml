@@ -1,0 +1,23 @@
+baseURL = "https://japerc.github.io/"
+title = "Julia Perczel"
+
+# Match the current site's URL shape (publications.html, e-waste.html, ...)
+# instead of Hugo's default pretty URLs (/publications/). Avoids breaking any
+# external bookmarks to the existing paths.
+uglyURLs = true
+
+# We don't use these page kinds. Disabling them silences a no-template warning
+# for taxonomy and stops Hugo from generating index.xml / sitemap.xml.
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+# Don't auto-inject `<meta name="generator">` — head.html owns the head.
+disableHugoGeneratorInject = true
+
+# Allow raw HTML inside content/*.md bodies. Each page's prose is hand-authored
+# HTML, not Markdown, and Hugo's Goldmark renderer otherwise strips it.
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  description = "Julia Perczel — social anthropologist researching market-based solutions to the e-waste crisis and waste in the Indian Himalayas."
+  ogTitle     = "Julia Perczel — Social Anthropologist"

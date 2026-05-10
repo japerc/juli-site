@@ -1,0 +1,8 @@
+# Hugo build output and caches. Regenerated on every `hugo` run; the
+# deployed copy lives in the japerc/japerc.github.io repo, not here.
+/public/
+/resources/
+/.hugo_build.lock
+
+# Local guidance file for Claude Code; not part of the published site.
+/CLAUDE.md

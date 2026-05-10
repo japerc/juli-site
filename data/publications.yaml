@@ -1,0 +1,97 @@
+# Publications data — single source of truth.
+#
+# `groups` defines the ordered list of publication groups shown on the
+# Publications page. Each group references entries by ID.
+#
+# `entries` is a flat dict keyed by stable ID. Each record has:
+#   authors  : string. May contain inline HTML.
+#   title    : string. May contain <em> for italicized work titles.
+#   venue    : string. May contain <em> for italicized work titles.
+#   lang     : optional BCP-47 code applied to <p class="pub-title"> and <p class="pub-venue">.
+#   link     : optional { url, label } — renders as <p class="pub-doi"><a>label</a></p>.
+#   projects : optional list of project keys (matched against project pages'
+#              project_key frontmatter to populate "Related Publications").
+#
+# All string fields go through Hugo's safeHTML — write a literal ampersand as
+# `&amp;` so it survives untouched. Plain text otherwise needs no escaping.
+
+groups:
+  - name: Journal Articles
+    entries:
+      - journal-flytipping
+      - journal-hu-environmentalism
+      - journal-toxic-flows
+      - journal-waste-tide
+      - journal-toxicity
+  - name: Book Chapters
+    entries:
+      - chapter-circular
+  - name: PhD Thesis
+    entries:
+      - thesis-2022
+  - name: Public & Online Writing
+    entries:
+      - public-allegra
+
+entries:
+  journal-flytipping:
+    authors: 'Holmes, H. &amp; Perczel, J. (2025)'
+    title: 'Fly-tipping and the sociology of abandonment'
+    venue: 'The Sociological Review, 73(3), 607–625.'
+    link:
+      url: 'https://doi.org/10.1177/00380261241285183'
+      label: 'doi:10.1177/00380261241285183'
+
+  journal-hu-environmentalism:
+    authors: 'Perczel, J. (2025)'
+    title: 'Hogyan vált a környezetvédelem üzletté? Avagy a krízis antropológiája másként'
+    venue: 'Kultúra és Közösség.'
+    lang: hu
+    link:
+      url: 'https://doi.org/10.35402/kek.2025.4.1'
+      label: 'doi:10.35402/kek.2025.4.1'
+
+  journal-toxic-flows:
+    authors: 'Perczel, J. (2024)'
+    title: 'E-waste is toxic, but for whom? The body politics of knowing toxic flows in Delhi'
+    venue: 'Environment and Planning C: Politics and Space, 42(1), 64–79.'
+    link:
+      url: 'https://doi.org/10.1177/23996544231188653'
+      label: 'doi:10.1177/23996544231188653'
+    projects: [e-waste]
+
+  journal-waste-tide:
+    authors: 'Perczel, J. (2024)'
+    title: "Re-Enchantment with the Waste of the World: Expressing Futures and Representing Wastelands in Chen Qiufan's <em>Waste Tide</em>"
+    venue: 'Revenant.'
+    link:
+      url: 'https://www.revenantjournal.com/contents/re-enchantment-with-the-waste-of-the-world-expressing-futures-and-representing-wastelands-in-chen-qiufans-waste-tide/'
+      label: 'Read online'
+    projects: [e-waste]
+
+  journal-toxicity:
+    authors: 'Perczel, J. (2021)'
+    title: 'Where is toxicity located? Side glances through fieldwork in a toxic place'
+    venue: 'Anthropology Today, 37(4), 27–30.'
+    link:
+      url: 'https://doi.org/10.1111/1467-8322.12668'
+      label: 'doi:10.1111/1467-8322.12668'
+    projects: [e-waste]
+
+  chapter-circular:
+    authors: 'Perczel, J. (2024)'
+    title: 'Making E-Waste Circular: Countering Vicious Circles and Materialising Honesty'
+    venue: 'In <em>Circular Economies in an Unequal World: Waste, Renewal and the Effects of Global Circularity</em>. Bloomsbury.'
+    projects: [e-waste]
+
+  thesis-2022:
+    authors: 'Perczel, J. (2022)'
+    title: "The Alchemy of Green Markets: Materiality, ethics, and value transformations in Delhi's e-waste recycling industry"
+    venue: 'PhD thesis, University of Manchester.'
+    projects: [e-waste]
+
+  public-allegra:
+    authors: 'Perczel, J. (2020)'
+    title: 'Narratives of dysfunction and success stories in e-waste recycling in India'
+    venue: 'Allegra Lab (#Failures series).'
+    projects: [e-waste]

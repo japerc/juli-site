@@ -1,0 +1,29 @@
+  <script>
+    (function () {
+      var btn = document.querySelector('.menu-toggle');
+      var nav = document.getElementById('nav-list');
+      btn.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open);
+      });
+
+      document.querySelectorAll('.dropdown-toggle').forEach(function (toggle) {
+        toggle.addEventListener('click', function (e) {
+          e.preventDefault();
+          var dropdown = toggle.closest('.dropdown');
+          var open = dropdown.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown.open').forEach(function (d) {
+            d.classList.remove('open');
+            var t = d.querySelector('.dropdown-toggle');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+    })();
+  </script>

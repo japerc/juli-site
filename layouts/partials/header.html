@@ -1,0 +1,33 @@
+  <header class="site-header">
+    <div class="container">
+      <a href="{{ "/" | relURL }}" class="site-title">{{ site.Title }}</a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul class="nav-list" id="nav-list">
+          {{/* Active-link logic: each top-level nav item gets class="active"
+               when its content file is the page currently being rendered.
+               .File.LogicalName is the source filename ("_index.md",
+               "publications.md", ...) — robust to URL-shape changes. */}}
+          <li>
+            <a href="{{ "/" | relURL }}"{{ if .IsHome }} class="active"{{ end }}>About</a>
+          </li>
+          {{/* On a project page, both the Projects toggle and the matching
+               menu item are marked active — matches the original site. */}}
+          {{ $projectFiles := slice "e-waste.md" "himalayan-waste.md" }}
+          {{ $onProject := in $projectFiles .File.LogicalName }}
+          <li class="dropdown">
+            <button type="button" class="dropdown-toggle{{ if $onProject }} active{{ end }}" aria-haspopup="true" aria-expanded="false">Projects</button>
+            <ul class="dropdown-menu">
+              <li><a href="{{ "/e-waste.html" | relURL }}"{{ if eq .File.LogicalName "e-waste.md" }} class="active"{{ end }}>E-Waste</a></li>
+              <li><a href="{{ "/himalayan-waste.html" | relURL }}"{{ if eq .File.LogicalName "himalayan-waste.md" }} class="active"{{ end }}>Himalayan Waste</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{{ "/publications.html" | relURL }}"{{ if eq .File.LogicalName "publications.md" }} class="active"{{ end }}>Publications</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>

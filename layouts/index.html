@@ -1,0 +1,65 @@
+{{ define "main" }}
+
+  <section class="hero">
+    <div class="container">
+      <img src="{{ "/images/profile.JPG" | relURL }}" alt="Julia Perczel" class="profile-image">
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-heading">Research Interests</h2>
+      <ul class="interests-list">
+        <li>Market-based solutions to the e-waste crisis</li>
+        <li>Social mobility and the waste trade</li>
+        <li>The social effects and portrayals of working with toxic substances</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-heading">Academic Background</h2>
+      <div class="timeline">
+        <div class="timeline-entry">
+          <div class="timeline-year">2018–2022</div>
+          <div class="timeline-desc">
+            <strong>Doctor of Philosophy - PhD, Social Anthropology</strong>
+            <span>University of Manchester</span>
+          </div>
+        </div>
+        <div class="timeline-entry">
+          <div class="timeline-year">2014–2016</div>
+          <div class="timeline-desc">
+            <strong>MA, Intensive South Asian Studies 2 years</strong>
+            <span>SOAS University of London</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-heading">Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <strong>Email</strong>
+          <span>julia.perczel [at] gmail [dot] com</span>
+        </div>
+        <div class="contact-item">
+          <strong>Affiliation</strong>
+          School of Social Sciences, University of Manchester
+        </div>
+        <div class="contact-item">
+          <strong>Profiles</strong>
+          <a href="https://orcid.org/0000-0003-0117-3803" target="_blank" rel="noopener">ORCID</a> ·
+          <a href="https://scholar.google.com/citations?user=1sy3N78AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{{ end }}

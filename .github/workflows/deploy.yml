@@ -1,0 +1,48 @@
+name: Build and deploy to japerc.github.io
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # also allow manual runs from the Actions tab
+
+# Don't let two deploys race. Pending runs queue and the in-flight one
+# finishes — we don't cancel a deploy that's already most of the way done.
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read  # juli-site checkout only needs read; the cross-repo
+                      # push is authorized by the deploy key, not GITHUB_TOKEN.
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          # Pin to the version we verified locally. Bump deliberately.
+          hugo-version: '0.161.1'
+          extended: true
+
+      - name: Build site
+        run: hugo --minify --gc
+
+      - name: Deploy to japerc/japerc.github.io
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: japerc/japerc.github.io
+          publish_branch: main
+          publish_dir: ./public
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: "Deploy ${{ github.sha }} from juli-site"
+          # full_commit_message would replace the entire message; we just
+          # set commit_message above. Default behaviour replaces the target
+          # branch's working tree with publish_dir each run.

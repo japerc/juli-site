@@ -1,0 +1,66 @@
+{{ define "main" }}
+
+  <section class="page-header">
+    <div class="container">
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="subtitle">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+
+  {{ with .Params.hero }}
+  <section class="project-hero-image">
+    <div class="container">
+      <img src="{{ .src | relURL }}" alt="{{ .alt }}" class="project-hero">
+      {{ with .credit_html }}<p class="hero-credit">{{ . | safeHTML }}</p>{{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <section>
+    <div class="container">
+      <h2 class="section-heading">About the Project</h2>
+      {{ .Content }}
+      {{ with .Params.details }}
+      <div class="detail-cards">
+        {{ range . }}
+        <div class="detail-card">
+          <strong>{{ .label }}</strong>
+          {{ .value }}
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+  {{/* Related Publications: walk groups in defined order, collect every
+       entry tagged with this page's project_key, render via shared partial.
+       Walking groups (rather than the entries map) preserves the ordering
+       authored in data/publications.yaml; map iteration is unordered. */}}
+  {{ $key := .Params.project_key }}
+  {{ $pubs := hugo.Data.publications }}
+  {{ $related := slice }}
+  {{ if $key }}
+    {{ range $pubs.groups }}
+      {{ range .entries }}
+        {{ $entry := index $pubs.entries . }}
+        {{ if and $entry.projects (in $entry.projects $key) }}
+          {{ $related = $related | append $entry }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $related }}
+  <section>
+    <div class="container">
+      <h2 class="section-heading">Related Publications</h2>
+      {{ range $related }}
+        {{ partial "pub-entry.html" . }}
+      {{ end }}
+      <p class="pub-more"><a href="{{ "/publications.html" | relURL }}">Full publication list →</a></p>
+    </div>
+  </section>
+  {{ end }}
+
+{{ end }}

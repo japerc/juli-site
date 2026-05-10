@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+  <section class="page-header">
+    <div class="container">
+      <h1>{{ .Title }}</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      {{ $pubs := hugo.Data.publications }}
+      {{ range $pubs.groups }}
+      <div class="pub-group">
+        <h2 class="section-heading">{{ .name }}</h2>
+        {{ range .entries }}
+          {{ $entry := index $pubs.entries . }}
+          {{ partial "pub-entry.html" $entry }}
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+{{ end }}
