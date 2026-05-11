@@ -6,3 +6,7 @@
 
 # Local guidance file for Claude Code; not part of the published site.
 /CLAUDE.md
+
+# Editor / OS junk.
+*.swp
+.DS_Store
