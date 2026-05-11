@@ -6,7 +6,7 @@ project_key: e-waste
 hero:
   src: /images/e-waste-hero.jpg
   alt: A pile of assorted electronic components
-  credit_html: 'Photo: <a href="https://unsplash.com/photos/G09BIFdUAGU" target="_blank" rel="noopener">Nathan Cima / Unsplash</a>'
+  credit_html: 'Photo: Julia Perczel'
 ---
 <p>E-waste is a charismatic form of waste with symbolic and material significance as the detritus of a
   quintessentially twenty-first century technology, as well as the urban mine for valuable strategic resources.

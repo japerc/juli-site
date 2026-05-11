@@ -6,7 +6,7 @@ project_key: himalayan-waste
 hero:
   src: /images/himalayan-hero.jpg
   alt: Snow-covered rocky mountain
-  credit_html: 'Photo: <a href="https://unsplash.com/photos/amAhBrvmVQc" target="_blank" rel="noopener">Sylwia Bartyzel / Unsplash</a>'
+  credit_html: 'Photo: Julia Perczel'
 details:
   - label: Funder
     value: Leverhulme Trust

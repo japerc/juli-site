@@ -120,7 +120,7 @@ section+section {
 }
 
 .site-title {
-  font-size: 1.15rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--primary);
   text-decoration: none;
@@ -263,16 +263,6 @@ section+section {
   grid-template-columns: 260px 1fr;
   gap: 2.5rem;
   align-items: start;
-}
-
-.hero h1 {
-  margin-bottom: 0.25rem;
-}
-
-.hero .subtitle {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
 }
 
 .profile-image {
