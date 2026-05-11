@@ -7,8 +7,9 @@ title = "Julia Perczel"
 uglyURLs = true
 
 # We don't use these page kinds. Disabling them silences a no-template warning
-# for taxonomy and stops Hugo from generating index.xml / sitemap.xml.
-disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+# for taxonomy and stops Hugo from generating index.xml. The sitemap is left
+# enabled so search engines and the robots.txt can point at /sitemap.xml.
+disableKinds = ["taxonomy", "term", "RSS"]
 
 # Don't auto-inject `<meta name="generator">` — head.html owns the head.
 disableHugoGeneratorInject = true

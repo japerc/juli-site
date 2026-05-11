@@ -104,4 +104,7 @@ entries:
     authors: 'Perczel, J.'
     title: 'Narratives of dysfunction and success stories in e-waste recycling in India'
     venue: 'Allegra Lab (#Failures series).'
+    link:
+      url: 'https://allegralaboratory.net/narratives-of-dysfunction-and-success-stories-in-e-waste-recycling-in-india/'
+      label: 'Read online'
     projects: [e-waste]

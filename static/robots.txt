@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://japerc.github.io/sitemap.xml

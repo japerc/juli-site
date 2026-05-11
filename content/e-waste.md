@@ -18,7 +18,7 @@ hero:
   pseudonymously called Sahih Kaam, operating in Delhi and across the country. It foregrounds the struggles over
   the value of waste by the for-profit environmental startup and its suppliers as they work under the shifting
   regimes of the newly introduced extended producer responsibility (EPR) rules. The exchange relationship
-  between startup and traders provides occasion to explore deep seated notions about class and caste written
+  between startup and traders provides occasion to explore deep-seated notions about class and caste written
   into the environmental advocacy narratives of e-waste’s polluting practices. On the one side there is the
   network of scrap traders from the Muslim biradari or caste called the Teli Maliks engaged in crooked polluting
   practices, while on the other is middle-class corporate India wanting to clean up the e-waste sphere. E-waste

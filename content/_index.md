@@ -1,5 +1,5 @@
 ---
-title: About
+title: Home
 ---
 <p>I am a social anthropologist working at the confluence of economic and environmental anthropology to
   understand the world of market-based solutions to the e-waste crisis. My focus is on the value
