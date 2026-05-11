@@ -27,7 +27,17 @@
         {{ range . }}
         <div class="detail-card">
           <strong>{{ .label }}</strong>
-          {{ .value }}
+          {{ if .link }}
+            <a class="detail-link" href="{{ .link }}" target="_blank" rel="noopener">
+              {{ if .logo }}
+                <img class="detail-logo" src="{{ .logo.src | relURL }}" alt="{{ .logo.alt }}">
+              {{ else }}
+                {{ .value }}
+              {{ end }}
+            </a>
+          {{ else }}
+            {{ .value }}
+          {{ end }}
         </div>
         {{ end }}
       </div>

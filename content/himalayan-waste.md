@@ -10,6 +10,13 @@ hero:
 details:
   - label: Funder
     value: Leverhulme Trust
+    link: https://www.leverhulme.ac.uk/
+    logo:
+      src: /images/Leverhulme_Trust_RGB_blue.jpg
+      alt: Leverhulme Trust
+  - label: Featured in
+    value: 2024 Annual Review - Leverhulme Trust
+    link: https://www.flipsnack.com/leverhulmetrust/2024-annual-review/full-view.html?p=60
   - label: Duration
     value: 2025–2028
 ---
