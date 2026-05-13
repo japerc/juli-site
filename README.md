@@ -1,9 +1,9 @@
 # juli-site
 
-Source for [japerc.github.io](https://japerc.github.io/) — Julia Perczel's
+Source for [juliaperczel.github.io](https://juliaperczel.github.io/) — Julia Perczel's
 personal academic site. Built with [Hugo](https://gohugo.io/).
 
-The deployed site lives in a separate repo (`japerc/japerc.github.io`).
+The deployed site lives in a separate repo (`juliaperczel/juliaperczel.github.io`).
 This repo holds the source; a GitHub Actions workflow builds and pushes
 the rendered output on every push to `main`.
 
@@ -50,3 +50,4 @@ the `ACTIONS_DEPLOY_KEY` secret on this repo.
 
 A manual run is also available from the repo's Actions tab
 (`workflow_dispatch`).
+s

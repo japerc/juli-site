@@ -1,26 +1,26 @@
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} — {{ site.Title }}{{ end }}</title>
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} - {{ site.Title }}{{ end }}</title>
 
-  {{/* Per-page Open Graph image: project pages use their hero, everything
-       else falls back to the profile photo. og:image needs an absolute URL. */}}
-  {{ $ogImage := "/images/profile.jpg" }}
-  {{ with .Params.hero }}{{ with .src }}{{ $ogImage = . }}{{ end }}{{ end }}
+{{/* Per-page Open Graph image: project pages use their hero, everything
+else falls back to the profile photo. og:image needs an absolute URL. */}}
+{{ $ogImage := "/images/profile.jpg" }}
+{{ with .Params.hero }}{{ with .src }}{{ $ogImage = . }}{{ end }}{{ end }}
 
-  <link rel="canonical" href="{{ .Permalink }}">
-  <meta name="description" content="{{ site.Params.description }}">
-  <meta property="og:title" content="{{ if .IsHome }}{{ site.Params.ogTitle }}{{ else }}{{ .Title }} — {{ site.Title }}{{ end }}">
-  <meta property="og:description" content="{{ site.Params.description }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:image" content="{{ $ogImage | absURL }}">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ if .IsHome }}{{ site.Params.ogTitle }}{{ else }}{{ .Title }} — {{ site.Title }}{{ end }}">
-  <meta name="twitter:description" content="{{ site.Params.description }}">
-  <meta name="twitter:image" content="{{ $ogImage | absURL }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="description" content="{{ site.Params.description }}">
+<meta property="og:title"
+  content="{{ if .IsHome }}{{ site.Params.ogTitle }}{{ else }}{{ .Title }} - {{ site.Title }}{{ end }}">
+<meta property="og:description" content="{{ site.Params.description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title"
+  content="{{ if .IsHome }}{{ site.Params.ogTitle }}{{ else }}{{ .Title }} - {{ site.Title }}{{ end }}">
+<meta name="twitter:description" content="{{ site.Params.description }}">
 
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%23363636'/><text x='32' y='44' font-family='sans-serif' font-size='34' font-weight='700' fill='%23ffffff' text-anchor='middle'>JP</text></svg>">
+<link rel="icon"
+  href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%23363636'/><text x='32' y='44' font-family='sans-serif' font-size='34' font-weight='700' fill='%23ffffff' text-anchor='middle'>JP</text></svg>">
 
-  <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}">
+<link rel="stylesheet" href="{{ "/css/style.css" | relURL }}">

@@ -1,17 +1,18 @@
 /* ── Custom Properties ── */
 :root {
-  --primary: #1A1F1A;
-  --primary-hover: #3A413A;
-  --accent: #4A5D3A;
-  --accent-light: #94A685;
-  --bg: #FAFAF6;
+  --primary: #65256A;
+  --primary-hover: #4c1550;
+  --accent: #765FA3;
+  --accent-light: #9B8ABC;
+  --bg: #F6F1F4;
+  --bg-hover: #ffeeee99;
   --surface: #FFFFFF;
-  --text: #1A1F1A;
-  --text-secondary: #555F55;
-  --border: #E0E2DC;
-  --footer-text: #E0E0E0;
-  --max-width: 960px;
-  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --text: #121D2B;
+  --text-secondary: #243A56;
+  --border: #DFCDD7;
+  --footer-text: #ececec;
+  --max-width: 940px;
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif, serif;
 }
 
 /* ── Reset ── */
@@ -83,11 +84,9 @@ p {
 }
 
 .hero-text p,
+
 .project-body p {
-  text-align: justify;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  hyphenate-limit-chars: 8 4 4;
+  text-align: left;
 }
 
 a {
@@ -141,7 +140,7 @@ section+section {
 
 .site-title {
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 850;
   color: var(--primary);
   text-decoration: none;
 }
@@ -250,7 +249,7 @@ section+section {
 /* ── Footer ── */
 .site-footer {
   background: var(--primary);
-  color: var(--footer-text);
+  color: var(--bg);
   padding: 2rem 0;
   font-size: 0.9rem;
   margin-top: auto;
@@ -280,14 +279,16 @@ section+section {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 2.5rem;
+  grid-template-columns: 38% 1fr;
+  gap: 3rem;
   align-items: start;
+  margin-top: 1rem
 }
 
 .profile-image {
+  margin-top: 0.5rem;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: 90%;
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   object-fit: cover;
@@ -355,7 +356,7 @@ section+section {
 }
 
 .interests-list li {
-  background: var(--bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   padding: 0.35rem 0.85rem;
   border-radius: 20px;
@@ -400,6 +401,7 @@ section+section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
+  
 }
 
 .contact-item {
@@ -412,15 +414,22 @@ section+section {
   margin-bottom: 0.15rem;
 }
 
+.contact-item a + a::before {
+  content: '·';
+  color: var(--text-secondary);
+  margin: 0 0.25rem;
+}
+
 /* ── Project Pages ── */
 .page-header {
   padding: 3rem 0 1.5rem;
 }
 
 .project-body > p:first-of-type {
-  font-size: 1.2rem;
-  line-height: 1.55;
-  color: var(--text);
+  /* font-size: 1.2rem; */
+  font-weight: 580;
+  line-height: 1.8;
+  color: var(--text-secondary);
   margin-bottom: 1.5rem;
 }
 
@@ -558,7 +567,7 @@ section+section {
 }
 
 .pub-entry:hover {
-  background: rgba(74, 93, 58, 0.05);
+  background: var(--surface);
 }
 
 .pub-year {
@@ -601,8 +610,12 @@ section+section {
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+
+  .site-header nav {
+    display: contents;
+  }
   .menu-toggle {
-    display: block;
+    display:block;
     margin-left: auto;
   }
 
@@ -646,7 +659,8 @@ section+section {
   }
 
   .profile-image {
-    width: 180px;
+    margin-top: -1.5rem;
+    width: 260px;
   }
 
   .project-cards {

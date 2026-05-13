@@ -1,93 +1,97 @@
 {{ define "main" }}
 
-  <h1 class="visually-hidden">Julia Perczel</h1>
+<h1 class="visually-hidden">Julia Perczel</h1>
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <img src="{{ "/images/profile.jpg" | relURL }}" alt="Julia Perczel" class="profile-image" loading="lazy" decoding="async">
-      <div class="hero-text">
-        {{ .Content }}
-      </div>
+<section class="hero">
+  <div class="container hero-grid">
+    <img src="{{ "/images/profile.jpg" | relURL }}" alt="Julia Perczel" class="profile-image" loading="lazy"
+      decoding="async">
+    <div class="hero-text">
+      {{ .Content }}
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <div class="container">
-      <h2 class="section-heading">Research Interests</h2>
-      <ul class="interests-list">
-        <li>waste management</li>
-        <li>legal frameworks</li>
-        <li>value transformations</li>
-        <li>circular economy</li>
-        <li>economic anthropology</li>
-      </ul>
-    </div>
-  </section>
+<section>
+  <div class="container">
+    <h2 class="section-heading">Research Interests</h2>
+    <ul class="interests-list">
+      <li>waste management</li>
+      <li>legal frameworks</li>
+      <li>value transformations</li>
+      <li>circular economy</li>
+      <li>economic anthropology</li>
+    </ul>
+  </div>
+</section>
 
-  <section>
-    <div class="container">
-      <h2 class="section-heading">Selected Projects</h2>
-      <div class="project-cards">
-        {{ range slice "/e-waste" "/himalayan-waste" }}
-          {{ with site.GetPage . }}
-          <a href="{{ .RelPermalink }}" class="project-card">
-            {{ with .Params.hero }}
-            <img src="{{ .src | relURL }}" alt="" loading="lazy" decoding="async">
-            {{ end }}
-            <div class="project-card-body">
-              <h3>{{ .Title }}</h3>
-              {{ with .Params.subtitle }}<p>{{ . }}</p>{{ end }}
-              <span class="project-card-more">Read more →</span>
-            </div>
-          </a>
-          {{ end }}
+<section>
+  <div class="container">
+    <h2 class="section-heading">Selected Projects</h2>
+    <div class="project-cards">
+      {{ range slice "/e-waste" "/himalayan-waste" }}
+      {{ with site.GetPage . }}
+      <a href="{{ .RelPermalink }}" class="project-card">
+        {{ with .Params.hero }}
+        <img src="{{ .src | relURL }}" alt="" loading="lazy" decoding="async">
         {{ end }}
-      </div>
+        <div class="project-card-body">
+          <h3>{{ .Title }}</h3>
+          {{ with .Params.subtitle }}<p>{{ . }}</p>{{ end }}
+          <span class="project-card-more">Read more →</span>
+        </div>
+      </a>
+      {{ end }}
+      {{ end }}
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <div class="container">
-      <h2 class="section-heading">Academic Background</h2>
-      <div class="timeline">
-        <div class="timeline-entry">
-          <div class="timeline-year">2018–2022</div>
-          <div class="timeline-desc">
-            <strong>Doctor of Philosophy - PhD, Social Anthropology</strong>
-            <span>University of Manchester</span>
-          </div>
+<section>
+  <div class="container">
+    <h2 class="section-heading">Academic Background</h2>
+    <div class="timeline">
+      <div class="timeline-entry">
+        <div class="timeline-year">2018–2022</div>
+        <div class="timeline-desc">
+          <strong>Doctor of Philosophy - PhD, Social Anthropology</strong>
+          <span>University of Manchester</span>
         </div>
-        <div class="timeline-entry">
-          <div class="timeline-year">2014–2016</div>
-          <div class="timeline-desc">
-            <strong>MA, Intensive South Asian Studies 2 years</strong>
-            <span>SOAS University of London</span>
-          </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-year">2014–2016</div>
+        <div class="timeline-desc">
+          <strong>MA, Intensive South Asian Studies 2 years</strong>
+          <span>SOAS University of London</span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <div class="container">
-      <h2 class="section-heading">Contact</h2>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <strong>Email</strong>
-          <span>julia.perczel [at] manchester [dot] ac [dot] uk</span>
-        </div>
-        <div class="contact-item">
-          <strong>Affiliation</strong>
-          <span>Social Anthropology<br>School of Social Sciences<br>University of Manchester</span>
-        </div>
-        <div class="contact-item">
-          <strong>Profiles</strong>
-          <a href="https://orcid.org/0000-0003-0117-3803" target="_blank" rel="noopener">ORCID</a> &middot;
-          <a href="https://scholar.google.com/citations?user=1sy3N78AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a> &middot;
-          <a href="https://research.manchester.ac.uk/en/persons/julia.perczel/" target="_blank" rel="noopener">University Profile</a>
-        </div>
+<section>
+  <div class="container">
+    <h2 class="section-heading">Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <strong>Email</strong>
+        <span>julia.perczel [at] manchester [dot] ac [dot] uk</span>
+      </div>
+      <div class="contact-item">
+        <strong>Affiliation</strong>
+        <span>Social Anthropology<br>School of Social Sciences<br>University of Manchester</span>
+      </div>
+      <div class="contact-item">
+        <strong>Profiles</strong>
+        <a href="https://orcid.org/0000-0003-0117-3803" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://scholar.google.com/citations?user=1sy3N78AAAAJ&hl=en&oi=ao" target="_blank"
+          rel="noopener">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/julia-perczel-87187861/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://research.manchester.ac.uk/en/persons/julia.perczel/" target="_blank" rel="noopener">University
+          Profile</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 {{ end }}
